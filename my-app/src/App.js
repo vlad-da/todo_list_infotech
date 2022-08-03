@@ -1,10 +1,12 @@
 
 import React from "react";
+import AddButtonList from "./components/AddListButton/AddButtonList";
 import List from "./components/List";
 import './index.css';
 
 function App() {
-  //задаём компонентам массив объектов с иконками; с цветом и классом active
+  //задаём компонентам List массив объектов (items) с иконками; с цветом и классом active
+
   return (
    <div className='todo'>
     <div className="todo__sidebar">
@@ -18,7 +20,8 @@ function App() {
         }
        
       ]}  />
-       <List items= {[
+       <List 
+       items= {[
         {
           color : "#42B883",
           name: 'Покупки',
@@ -41,6 +44,7 @@ function App() {
         },
        
       ]} isRemovable/>
+      <AddButtonList />
     </div>
     <div className="todo__tasks"></div>
    </div>
