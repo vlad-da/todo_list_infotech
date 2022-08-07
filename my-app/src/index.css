@@ -22,14 +22,23 @@ body {
     border-radius: 10px;
     box-shadow: 1px 2px 20px #f3f3f3;
     font-size: 14px;
+    display: flex;
 }
 .todo__sidebar {
     background-color: #f4f6f8;
     width: 200px;
-    height: 410px;
+    min-height: 410px;
     border-right: 1px solid #f1f1f1;
     padding: 60px 20px;
+
 }
+
+.todo .todo__tasks {
+    flex: 1;
+    padding: 60px;
+}
+
+
 
 .field {
     background: #FFFFFF;
