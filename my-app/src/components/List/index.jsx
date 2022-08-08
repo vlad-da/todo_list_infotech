@@ -5,7 +5,7 @@ import removeSvg from './remove.svg';
 
 //компонент меню
 
-function List({items, isRemovable, onClick, onRemove}) {
+function List({items, isRemovable, onClick, onRemove, onClickItem, activeItem}) {
 
     //удаление заметки при нажатии на крестик
     const removeList = (item) => {
@@ -22,11 +22,12 @@ function List({items, isRemovable, onClick, onRemove}) {
         {items.map((item, index)=> (
                 //в li назначение класса для каждого компонента для выделения элемента, либо пустой класс
                 //в {i} выбор  либо иконки, либо цвета
-                <li key={index} className={item.active ? 'active' : ''}>
+                //выбор элемента из списка при клике
+                <li onClick={onClickItem ? () => onClickItem(item) : null} key={index} className={activeItem && activeItem.id === item.id ? 'active' : ''}>
                     <i>
                         {item.icon ? ( item.icon) : ( <i className={'badge'}></i> )}
                     </i>
-                    <span>{item.name}</span>
+                    <span>{item.name}{item.tasks  && ` (${item.tasks.length})`}</span>
                     {isRemovable && <img className='list__remove-icon' src={removeSvg} alt="remove" onClick={() => removeList(item)}/>}
                 </li>
         ))}

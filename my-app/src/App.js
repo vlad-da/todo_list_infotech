@@ -20,8 +20,33 @@ function App() {
   const [lists, setLists] = useState(null);
 
   //добавление новых данных
-  const onAddList = (obj) => {
-    const newList = [ ...lists, obj ];
+    const onAddList = (obj) => {
+      const newList = [ ...lists, obj ];
+      setLists(newList);
+  };
+
+  //добавление новой задачи
+  const onAddTask = (listId, taskObj) => {
+    const newList = lists.map(item => {
+      if (item.id === listId) {
+        item.tasks = [...item.tasks, taskObj];
+      }
+      return item;
+    });
+    setLists(newList);
+};
+
+  //состояние правого экрана
+  const [activeItem, setActiveItem] = useState(null);
+
+  //изменение названия заметки
+  const onEditListTitle = (id, title) => {
+    const newList = lists.map(item => {
+      if (item.id === id) {
+        item.name = title;
+      }
+      return item;
+    });
     setLists(newList);
   };
 
@@ -46,7 +71,9 @@ function App() {
       onRemove={id => {
        const newLists = lists.filter(item => item.id !== id);
        setLists(newLists);
-      }} items= {lists}  isRemovable/> 
+      }} items= {lists}  isRemovable 
+      //выбор элемента справа
+      onClickItem={item => {setActiveItem(item)}} activeItem={activeItem}/> 
 
       : 'Загрузка'
       }
@@ -56,7 +83,9 @@ function App() {
       onAdd={onAddList} />
     </div>
     <div className="todo__tasks">
-      {lists && <Tasks list={lists[1]}/>}
+
+      { //вывод задач и изменение названия задачи
+      lists && activeItem && <Tasks list={activeItem} onAddTask={onAddTask} onEditTitle={onEditListTitle}/>}
       
     </div>
    </div>

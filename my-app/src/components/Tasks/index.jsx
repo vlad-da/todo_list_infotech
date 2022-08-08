@@ -1,16 +1,34 @@
 import React from 'react';
+import axios from 'axios';
+import AddTaskForm  from './AddTaskForm';
 import penSvg from './pen.svg';
+
 import './tasks.css';
 
-const Tasks = ({list}) => {
+const Tasks = ({list, onEditTitle, onAddTask}) => {
+
+    //изменения названия заметки через prompt
+    const editTitle = () => {
+        const newTitle = window.prompt('Название заметки', list.name);
+        if (newTitle) {
+            onEditTitle(list.id, newTitle);
+            //изменение названия заметки в бд
+            axios.patch('http://localhost:3001/lists/' + list.id, {
+                name: newTitle
+            }).catch(() => {
+                alert('Не удалось обновить название заметки');
+            });
+        }
+    };
+
     //компонент для правой части туду-лист: загаловок и список
     return (
         <div className="tasks">
             <h2  className="tasks__title">{list.name}
-                <img className='tasks__title-pen' src={penSvg} alt='pen' />
+                <img onClick={editTitle} className='tasks__title-pen' src={penSvg} alt='pen' />
             </h2>
             <div className='tasks__items'>
-            
+                {!list.tasks.length && <h2>Задачи отсутствуют</h2>}
                 {
                     //отображаем все задания в заметке
                     list.tasks.map(task => (
@@ -28,7 +46,8 @@ const Tasks = ({list}) => {
                     ))
                 }
 
-
+                <AddTaskForm list={list} onAddTask={onAddTask}/> 
+                
                 
             </div>
         </div>

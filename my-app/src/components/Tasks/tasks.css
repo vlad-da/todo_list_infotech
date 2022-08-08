@@ -56,6 +56,16 @@ input:checked + label{
 
 }
 
+.tasks__items h2 {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 39px;
+    color: #C9D1D3;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
 .checkbox {
     display: flex;
     align-items: center;
@@ -66,4 +76,36 @@ input:checked + label{
 
 .tasks__item-row {
     margin-top: 30px;
+}
+
+.tasks__form {
+    margin-top: 30px;
+
+}
+.tasks__form .tasks__form-block .button {
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.tasks__form-new {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.4;
+}
+
+.tasks__form-new:hover {
+    opacity: 0.8;
+}
+
+.tasks__form-new span {
+    font-size: 16px;
+    margin-left: 19px;
+}
+
+.tasks__form-new img {
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+
 }
