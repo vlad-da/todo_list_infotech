@@ -42,7 +42,7 @@ const AddTaskForm = ({list, onAddTask}) => {
             alert('Введите что-нибудь перед отправкой');
         }
 
-    };
+    }; 
 
     return (
         <div className="tasks__form">

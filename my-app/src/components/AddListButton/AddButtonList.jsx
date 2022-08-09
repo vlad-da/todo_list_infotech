@@ -32,7 +32,8 @@ const AddButtonList = ({onAdd}) => {
         }
         setIsLoading(true);
         axios.post('http://localhost:3001/lists', {name: inputValue}).then( ({data}) => {
-            onAdd(data);
+            const listObj = {...data, tasks: []};
+            onAdd(listObj);
             onClose();
         }).catch(() => {
             alert('Ошибка добавления списка');

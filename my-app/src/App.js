@@ -50,6 +50,48 @@ function App() {
     setLists(newList);
   };
 
+  //удаление задачи из бд если true
+  const onRemoveTask = (listId, taskId) => {
+    if (window.confirm('Вы действительно хотите удалить задачу?')) {
+      const newList = lists.map(item => {
+        if (item.id === listId) {
+          item.tasks = item.tasks.filter(task => task.id !== taskId);
+        }
+        return item;
+      });
+      setLists(newList);
+      axios.delete('http://localhost:3001/tasks/' + taskId).catch((e) => {
+        console.log(e);
+        alert('Не удалось удалить задачу');
+      });
+    }
+  };
+
+  //редактирование задачи из бд
+  const onEditTask = (listId, taskObj) => {
+    const newTaskText = window.prompt('Текст задачи', taskObj.text);
+    if (!newTaskText) {
+      return;
+    }
+    const newList = lists.map(item => {
+      if (item.id === listId) {
+        item.tasks = item.tasks.map(task => {
+          if (task.id === taskObj.id) {
+            task.text = newTaskText;
+          }
+          return task;
+        });
+      }
+      return item;
+    });
+      setLists(newList);
+      axios.patch('http://localhost:3001/tasks/' + taskObj.id, {text: newTaskText})
+      .catch(() => {
+          alert('Не удалось обновить задачу');
+      });
+    
+  };
+
   //задаём компонентам List массив объектов (items) с иконками; с цветом и классом active
 
   return (
@@ -85,7 +127,7 @@ function App() {
     <div className="todo__tasks">
 
       { //вывод задач и изменение названия задачи
-      lists && activeItem && <Tasks list={activeItem} onAddTask={onAddTask} onEditTitle={onEditListTitle}/>}
+      lists && activeItem && <Tasks list={activeItem} onAddTask={onAddTask} onEditTitle={onEditListTitle} onRemoveTask={onRemoveTask} onEditTask={onEditTask} />}
       
     </div>
    </div>

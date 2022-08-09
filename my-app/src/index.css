@@ -30,12 +30,12 @@ body {
     min-height: 410px;
     border-right: 1px solid #f1f1f1;
     padding: 60px 20px;
-
 }
 
 .todo .todo__tasks {
     flex: 1;
     padding: 60px;
+    overflow: auto;
 }
 
 

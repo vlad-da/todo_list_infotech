@@ -20,6 +20,30 @@
     opacity: 1;
     
 }
+.checkbox {
+    flex: 1;
+}
+.tasks__items-row-actions {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.tasks__items-row-actions-pen {
+margin-right: 10px;
+padding: 0px 4px;
+}
+
+.tasks__items-row-actions-remove {
+    padding: 0px 4px;
+}
+
+.tasks__items-row-actions-pen:hover, .tasks__items-row-actions-remove:hover {
+    background-color: rgb(248, 248, 248);
+}
+
+.tasks__items-row-actions-pen:active, .tasks__items-row-actions-remove:active {
+    background-color: rgb(243, 242, 242);
+}
 
 .checkbox input {
     display: none;

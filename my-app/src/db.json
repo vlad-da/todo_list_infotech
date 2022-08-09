@@ -62,33 +62,27 @@
     },
     {
       "listId": 1,
-      "text": "123",
+      "text": "123456",
       "completed": false,
       "id": 9
     },
     {
       "listId": 4,
-      "text": "Купить 1984!",
+      "text": "listObj",
       "completed": false,
-      "id": 10
+      "id": 17
     },
     {
-      "listId": 3,
-      "text": "ыыыва",
+      "listId": 4,
+      "text": "listObj",
       "completed": false,
-      "id": 11
+      "id": 18
     },
     {
-      "listId": 2,
-      "text": "вапвап",
+      "listId": 4,
+      "text": "listObj",
       "completed": false,
-      "id": 12
-    },
-    {
-      "listId": 1,
-      "text": "555555555",
-      "completed": false,
-      "id": 13
+      "id": 19
     }
   ]
 }
