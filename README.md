@@ -5,7 +5,7 @@
 * HTML
 * CSS 
 * JavaScript
-* ReactJS (useState, useReducer, useEffect)
+* ReactJS (useState, useEffect)
 * Axios (для получения данных от фейкового сервера)
 * JSON-Server (для реализации фейкового сервера)
 
