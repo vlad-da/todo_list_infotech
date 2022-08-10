@@ -13,13 +13,15 @@
 
 Перед запуском приложения необходимо перейти в папку my-app и загрузить, и установить в проект JSON-Server и Axios
 
-### Загрузка и запуск JSON-Server
+### Загрузка JSON-Server
 
 [Команда для загрузки и установки:](https://github.com/typicode/json-server)
 
 #### `npm install -g json-server`
 
 [Команда для запуска:](https://github.com/typicode/json-server)
+
+### Запуск JSON-Server
 
 Также устанавливаем порт 3001, так как 3000 занимает само приложение
 
