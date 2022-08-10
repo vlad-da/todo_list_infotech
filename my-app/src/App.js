@@ -92,6 +92,30 @@ function App() {
     
   };
 
+  //передача на сервер о выполнении задачи
+  const onCompleteTask = (listId, taskId, completed) => {
+    const newList = lists.map(list => {
+      if (list.id === listId) {
+        list.tasks = list.tasks.map(task => {
+          if (task.id === taskId) {
+            task.completed = completed;
+          }
+          return task;
+        });
+      }
+      return list;
+    });
+    setLists(newList);
+    axios
+      .patch('http://localhost:3001/tasks/' + taskId, {
+        completed: completed
+      })
+      .catch(() => {
+        alert('Не удалось обновить задачу');
+      });
+  };
+
+
   //задаём компонентам List массив объектов (items) с иконками; с цветом и классом active
 
   return (
@@ -115,7 +139,7 @@ function App() {
        setLists(newLists);
       }} items= {lists}  isRemovable 
       //выбор элемента справа
-      onClickItem={item => {setActiveItem(item)}} activeItem={activeItem}/> 
+      onClickItem={item => {setActiveItem(item)}} activeItem={activeItem} /> 
 
       : 'Загрузка'
       }
@@ -127,7 +151,7 @@ function App() {
     <div className="todo__tasks">
 
       { //вывод задач и изменение названия задачи
-      lists && activeItem && <Tasks list={activeItem} onAddTask={onAddTask} onEditTitle={onEditListTitle} onRemoveTask={onRemoveTask} onEditTask={onEditTask} />}
+      lists && activeItem && <Tasks list={activeItem} onAddTask={onAddTask} onEditTitle={onEditListTitle} onRemoveTask={onRemoveTask} onEditTask={onEditTask} onCompleteTask={onCompleteTask}/>}
       
     </div>
    </div>

@@ -6,7 +6,7 @@ import penSvg from './pen.svg';
 
 import './tasks.css';
 
-const Tasks = ({list, onEditTitle, onAddTask, onRemoveTask, onEditTask}) => {
+const Tasks = ({list, onEditTitle, onAddTask, onRemoveTask, onEditTask, onCompleteTask}) => {
 
     //изменения названия заметки через prompt
     const editTitle = () => {
@@ -36,7 +36,7 @@ const Tasks = ({list, onEditTitle, onAddTask, onRemoveTask, onEditTask}) => {
                     //отображаем все задания в заметке
                     list.tasks && list.tasks.map(task => (
                         //компонент в виде строки списка
-                        <Task key={task.id} list={list} onRemove={onRemoveTask} onEdit={onEditTask} {...task} />
+                        <Task key={task.id} list={list} onRemove={onRemoveTask} onEdit={onEditTask} {...task} onComplete={onCompleteTask}/>
                     ))
                 }
 

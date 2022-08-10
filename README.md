@@ -38,3 +38,7 @@
 [Команда для запуска приложения:](https://create-react-app.dev/docs/getting-started)
 
 #### `npm run start`
+
+### Ссылка на реализаию на YouTube
+
+#### [Реализация ToDoList](https://www.youtube.com/watch?v=dwG0PyNv3kk&ab_channel=VladislavVlasenko)

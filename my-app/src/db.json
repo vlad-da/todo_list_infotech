@@ -2,87 +2,87 @@
   "lists": [
     {
       "id": 1,
-      "name": "Продажи"
+      "name": "HTML"
     },
     {
       "id": 2,
-      "name": "Фронтенд"
+      "name": "CSS"
     },
     {
       "id": 3,
-      "name": "Фильмы и сериалы"
+      "name": "JavaScript"
     },
     {
       "id": 4,
-      "name": "Книги"
+      "name": "React JavaScript"
     }
   ],
   "tasks": [
     {
       "id": 1,
       "listId": 2,
-      "text": "Изучить JavaScript",
+      "text": "style",
       "completed": false
     },
     {
       "id": 2,
       "listId": 2,
-      "text": "Изучить паттерны проектирования",
+      "text": ".class",
       "completed": false
     },
     {
       "id": 3,
       "listId": 2,
-      "text": "ReactJS Hooks (useState, useReducer, useEffect и т.д.)",
-      "completed": true
+      "text": "Ширина",
+      "completed": false
     },
     {
       "id": 4,
       "listId": 2,
-      "text": "Redux (redux-observable, redux-saga)",
+      "text": "Высота",
       "completed": false
     },
     {
       "listId": 1,
-      "text": "test",
-      "completed": false,
+      "text": "div",
+      "completed": true,
       "id": 6
     },
     {
       "listId": 1,
-      "text": "qweqwe",
-      "completed": false,
+      "text": "input",
+      "completed": true,
       "id": 7
     },
     {
       "listId": 1,
-      "text": "qweqwe",
-      "completed": false,
+      "text": "button",
+      "completed": true,
       "id": 8
     },
     {
       "listId": 1,
-      "text": "123456",
+      "text": "ul",
       "completed": false,
       "id": 9
     },
     {
       "listId": 4,
-      "text": "listObj",
-      "completed": false,
+      "text": "Установка",
+      "completed": true,
       "id": 17
     },
     {
       "listId": 4,
-      "text": "listObj",
-      "completed": false,
-      "id": 18
-    },
-    {
-      "listId": 4,
-      "text": "listObj",
+      "text": "UseEffect - нужно изучить",
       "completed": false,
       "id": 19
+    },
+    {
+      "listId": 3,
+      "text": "Переменные",
+      "completed": false,
+      "id": 20
     }
   ]
 }
