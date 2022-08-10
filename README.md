@@ -17,18 +17,19 @@
 
 [Команда для загрузки и установки:](https://github.com/typicode/json-server)
 
-#### npm install -g json-server
+#### `npm install -g json-server`
 
 [Команда для запуска:](https://github.com/typicode/json-server)
+
 Также устанавливаем порт 3001, так как 3000 занимает само приложение
 
-json-server --watch db.json --port 3001
+#### `json-server --watch db.json --port 3001`
 
 ### Загрузка Axios
 
 [Команда для загрузки и установки:](https://github.com/axios/axios)
 
-#### npm install axios
+#### `npm install axios`
 
 ### Запуск приложения
 
@@ -36,4 +37,4 @@ json-server --watch db.json --port 3001
 
 [Команда для запуска приложения:](https://create-react-app.dev/docs/getting-started)
 
-#### npm run start
+#### `npm run start`
